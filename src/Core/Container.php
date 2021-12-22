@@ -12,8 +12,6 @@ class Container
 
     protected static $singletons = [];
 
-    protected static $instance = [];
-
 
     public function bind($key, $value)
     {

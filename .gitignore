@@ -1,4 +1,5 @@
 vendor/
 public/
 .idea/
+src/testingClasses/
 .phpunit.result.cache

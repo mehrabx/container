@@ -4,13 +4,16 @@
 namespace Mehrabx\Container\Core;
 
 use Exception;
+use Mehrabx\Container\Core\AutomateInjection;
 
 class Container
 {
 
-    protected static $binds = [];
+    public static $binds = [];
 
     protected static $singletons = [];
+
+    protected $autoInjection;
 
 
     public function bind($key, $value)
@@ -84,6 +87,11 @@ class Container
         if (isset(self::$binds[$key])) {
             throw new \Exception("$key has been defined before");
         }
+    }
+
+    public function exist(string $value): bool
+    {
+        return array_key_exists($value, self::$binds);
     }
 
 }
